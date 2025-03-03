@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-	background-color: antiquewhite;
-	background-size: cover;
+    background: url('https://rukminim2.flixcart.com/image/850/1000/kxrvi4w0/wall-decoration/l/p/a/cyberpunk-fan-art-neon-jivostudio-cyberpunk-2077-hd-wallpaper-original-imaga5gzjrybqygn.jpeg?q=90&crop=false') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
     color: #333;
@@ -12,7 +12,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #803700;
+    background-color: #37045b;
     color: white;
     padding: 1px 0;
     text-align: center;
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #d0894c;
+    color: #00ffd0;
 }
 
 .main-content {
@@ -68,14 +68,16 @@ body {
 }
 
 .company__info {
-    background-color: #803700;
+    background-color: #31044e;
+    /* background: url('https://i.pinimg.com/550x/cb/fb/65/cbfb65c981ea9073b6d46ce4cafa7395.jpg') no-repeat center center fixed; */
+    background-size: cover;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #ffffff;
     padding: 20px;
 	width: 45%;
 }
@@ -108,7 +110,7 @@ body {
 }
 
 .row > h2 {
-    color: #803700;
+    color: #7500c8;
     text-align: center;
 }
 
@@ -137,7 +139,7 @@ body {
 }
 
 .form__input:focus {
-    border-bottom-color: #803700;
+    border-bottom-color: #7500c8;
     box-shadow: 0 0 5px rgba(128, 55, 0, 0.4);
     border-radius: 4px;
 }
@@ -148,7 +150,7 @@ body {
     border-radius: 30px;
     color: #fff;
     font-weight: 600;
-    background-color: #803700;
+    background-color: #37045b;
     border: none;
     margin-top: 1.5em;
     margin-bottom: 1em;
@@ -158,7 +160,7 @@ body {
 }
 
 .btn:hover, .btn:focus {
-    background-color: #d0894c;
+    background-color: #00ddff;
     color: #fff;
 }
 
@@ -173,5 +175,5 @@ body {
     color: #fff;
     font-size: 14px;
     text-align: center;
-    border-top: 3px solid #803700;
+    border-top: 3px solid #7500c8;
 }
