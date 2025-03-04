@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers 2049</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: flex-end;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            padding: 10px 15px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .hero {
+            height: 100vh;
+            background: url('ImagenesIndex/Index3.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000000;
+            padding: 20px 0;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.116);
+            color: rgba(0, 0, 0, 0.372);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .footer {
+            height: 50vh;
+            background: url('ImagenesIndex/Index14.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 0.8rem;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#sneakers">Sneakers</a>
+        <a href="#hoodies">Hoodies</a>
+        <a href="#articulos">Artículos</a>
+    </div>
+
+    <div class="hero">Sneakers 2049</div>
+    
+    <div class="carousel-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel" id="carousel">
+            <img src="ImagenesIndex/Sneaker1.jpg" alt="Tennis 1">
+            <img src="ImagenesIndex/Sneaker2.jpeg" alt="Tennis 2">
+            <img src="ImagenesIndex/Sneaker3.jpeg" alt="Tennis 3">
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    
+    <div class="footer">
+        <p>Avisos de privacidad | Derechos de autor | Términos y condiciones</p>
+    </div>
+    
+    <script>
+        let index = 0;
+        function moveSlide(direction) {
+            const carousel = document.getElementById("carousel");
+            const totalSlides = document.querySelectorAll(".carousel img").length;
+            index += direction;
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
+</body>
+</html>
