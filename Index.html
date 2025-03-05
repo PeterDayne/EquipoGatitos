@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <title>Sneakers 2049</title>
     <style>
         body, html {
@@ -15,11 +16,28 @@
             background: rgba(0, 0, 0, 0.8);
             padding: 15px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
+        }
+        .login-button {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-button:hover {
+            background-color: lightgray;
+        }
+        .navbar-links {
+            display: flex;
         }
         .navbar a {
             color: white;
@@ -32,6 +50,9 @@
         .navbar a:hover {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
+        }
+        .hero {
+            font-family: 'Orbitron', sans-serif;
         }
         .hero {
             height: 100vh;
@@ -73,7 +94,7 @@
         .next { right: 10px; }
         .footer {
             height: 50vh;
-            background: url('ImagenesIndex/Index14.jpeg') no-repeat center center/cover;
+            background: url('ImagenesIndex/Index16.jpeg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,16 +103,26 @@
             font-size: 0.8rem;
             padding: 20px;
         }
+        .footer p {
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="#sneakers">Sneakers</a>
-        <a href="#hoodies">Hoodies</a>
-        <a href="#articulos">Artículos</a>
+        <button class="login-button" onclick="location.href='login.html'">&#128274;</button>
+        <div class="navbar-links">
+            <a href="#sneakers">Sneakers</a>
+            <a href="#hoodies">Hoodies</a>
+            <a href="#articulos">Artículos</a>
+        </div>
     </div>
 
-    <div class="hero">Sneakers 2049</div>
+    <!-- <div class="hero">Sneakers 2049</div> -->
+    <div class="hero">运动鞋 2049</div>
+
     
     <div class="carousel-container">
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
