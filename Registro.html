@@ -41,7 +41,7 @@
                         <h2>Registrarse</h2>
                     </div>
                     <div class="row">
-                        <form class="form-group">
+                        <form class="form-group" onsubmit="redirectToProducts(event)">
                             <div class="row">
                                 <input type="text" name="fullname" id="fullname" 
                                        class="form__input" placeholder="Nombre completo">
@@ -78,5 +78,14 @@
     <footer class="footer">
         <p>&copy; 2025 Tienda de Calzado "Sneakers 2049". Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function redirectToProducts(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            // Aquí podrías agregar lógica para validar los datos antes de redirigir
+            window.location.href = "Index.html"; // Redirige al CRUD
+        }
+    </script>
+
 </body>
 </html>
