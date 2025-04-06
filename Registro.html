@@ -1,91 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Sneakers 2049</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - Sneakers 2049</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/stylesheet.css">
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Sneakers 2049</h1>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Comentarios</a></li>
+<body class="bg-cover bg-center bg-fixed min-h-screen text-customDark" style="background-image: url('https://rukminim2.flixcart.com/image/850/1000/kxrvi4w0/wall-decoration/l/p/a/cyberpunk-fan-art-neon-jivostudio-cyberpunk-2077-hd-wallpaper-original-imaga5gzjrybqygn.jpeg?q=90&crop=false');">
 
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <div class="container-fluid">
-        <div class="row main-content text-center">
-            <div class="col-md-4 text-center company__info">
-                <span class="company__logo">
-                   <h2>Sneakers 2049</h2>
-                </span>
-                <h4 class="company_title">
-                    <img src="img/Designer.png" 
-                         alt="Gatito bonito sin fondo">
-                </h4>
-                <p>¡Únete a la mejor tienda de calzado innovador!</p>
-            </div>
-            <div class="col-md-8 col-xs-12 col-sm-12 login_form">
-                <div class="container-fluid">
-                    <div class="row">
-                        <h2>Registrarse</h2>
-                    </div>
-                    <div class="row">
-                        <form class="form-group" onsubmit="redirectToProducts(event)">
-                            <div class="row">
-                                <input type="text" name="fullname" id="fullname" 
-                                       class="form__input" placeholder="Nombre completo">
-                            </div>
-                            <div class="row">
-                                <input type="email" name="email" id="email" 
-                                       class="form__input" placeholder="Correo electrónico">
-                            </div>
-                            <div class="row">
-                                <input type="text" name="username" id="username" 
-                                       class="form__input" placeholder="Nombre de usuario">
-                            </div>
-                            <div class="row">
-                                <input type="password" name="password" id="password" 
-                                       class="form__input" placeholder="Contraseña">
-                            </div>
-                            <div class="row">
-                                <input type="password" name="confirm_password" id="confirm_password" 
-                                       class="form__input" placeholder="Confirmar contraseña">
-                            </div>
-                            <div class="row">
-                                <input type="submit" value="Registrarse" class="btn">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="row">
-                        <p>¿Ya tienes una cuenta? <a href="#"><br>¡Inicia sesión aquí!</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <header class="fixed top-0 left-0 w-full bg-brandPurple text-customWhite py-2 shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Sneakers 2049</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:text-accentBlue text-lg">Inicio</a></li>
+          <li><a href="#" class="hover:text-accentBlue text-lg">Productos</a></li>
+          <li><a href="#" class="hover:text-accentBlue text-lg">Comentarios</a></li>
+        </ul>
+      </nav>
     </div>
-    
-    <footer class="footer">
-        <p>&copy; 2025 Tienda de Calzado "Sneakers 2049". Todos los derechos reservados.</p>
-    </footer>
+  </header>
 
-    <script>
-        function redirectToProducts(event) {
-            event.preventDefault(); // Evita que la página se recargue
-            // Aquí podrías agregar lógica para validar los datos antes de redirigir
-            window.location.href = "Index.html"; // Redirige al CRUD
-        }
-    </script>
+  <main class="flex justify-center items-center min-h-screen pt-24">
+    <div class="flex w-full max-w-4xl bg-customWhite rounded-2xl shadow-lg overflow-hidden">
 
+      <div class="hidden md:flex md:flex-col justify-center items-center w-2/5 bg-darkPurple text-customWhite p-6">
+        <h2 class="text-2xl font-bold mb-4">Sneakers 2049</h2>
+        <img src="img/Designer.png" alt="Tennis cyberpunk" class="w-1/2 rounded-lg mb-4">
+        <p class="text-center">¡Bienvenido a la mejor tienda de tenis y calzado cómodo!</p>
+      </div>
+
+      <div class="w-full md:w-3/5 p-8">
+        <h2 class="text-center text-2xl text-brandPurple font-bold mb-6">Registrarse</h2>
+        <form class="space-y-4">
+          <input type="text" name="fullname" placeholder="Nombre completo" class="border-b-2 border-customGray focus:border-brandPurple outline-none px-3 py-2 rounded bg-customGray">
+          <input type="email" name="email" placeholder="Correo electrónico" class="border-b-2 border-customGray focus:border-brandPurple outline-none px-3 py-2 rounded bg-customGray">
+          <input type="text" name="username" placeholder="Nombre de usuario" class="border-b-2 border-customGray focus:border-brandPurple outline-none px-3 py-2 rounded bg-customGray">
+          <input type="password" name="password" placeholder="Contraseña" class="border-b-2 border-customGray focus:border-brandPurple outline-none px-3 py-2 rounded bg-customGray">
+          <input type="password" name="confirm_password" placeholder="Confirmar contraseña" class="border-b-2 border-customGray focus:border-brandPurple outline-none px-3 py-2 rounded bg-customGray">
+          <button type="submit" class="w-60 bg-brandPurple text-customWhite font-semibold rounded-full py-2 hover:bg-accentCyan transition">
+            Registrarse
+          </button>
+        </form>
+        <p class="text-sm mt-4 text-center">¿Ya tienes una cuenta? <a href="#" class="text-brandPurple hover:underline">¡Inicia sesión aquí!</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="fixed bottom-0 left-0 w-full bg-black/70 text-customWhite text-center text-sm py-4 border-t-4 border-brandPurple">
+    &copy; 2025 Tienda de Calzado "Sneakers 2049". Todos los derechos reservados.
+  </footer>
 </body>
 </html>

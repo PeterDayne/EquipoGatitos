@@ -177,3 +177,56 @@ body {
     text-align: center;
     border-top: 3px solid #7500c8;
 }
+
+.bg-brandPurple {
+    background-color: #5E2A84;
+}
+
+.text-brandPurple {
+    color: #5E2A84;
+}
+
+.bg-brandDark {
+    background-color: #1C1B2D;
+}
+
+.bg-brandLight {
+    background-color: #F3F1F5;
+}
+
+.text-accentBlue {
+    color: #00D1FF;
+}
+
+.hover\:text-accentBlue:hover {
+    color: #00D1FF;
+}
+
+.bg-customWhite {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .bg-customGray {
+    background-color: #f3f3f3;
+  }
+  
+  .border-customGray {
+    border-color: #d1d5db; 
+  }
+  
+  .text-customDark {
+    color: #1f2937; 
+  }
+  
+  .bg-darkPurple {
+    background-color: #2E0249;
+  }
+  
+  .hover\:bg-accentCyan:hover {
+    background-color: #00CFFF;
+  }
+  
+  .text-customWhite {
+    color: #ffffff;
+  }
+  
