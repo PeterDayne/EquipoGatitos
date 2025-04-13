@@ -1,184 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrar Productos - Sneakers 2049</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <style>
-        body {
-            background: url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-        }
-        .container {
-            background: rgba(20, 20, 50, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
-        }
-        h2, h3 {
-            color: #0ff;
-            text-shadow: 0 0 10px #0ff;
-        }
-        .btn-primary {
-            background: #ff00ff;
-            border: none;
-            box-shadow: 0 0 10px #ff00ff;
-        }
-        .btn-primary:hover {
-            background: #d400d4;
-        }
-        table {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-        }
-        table th {
-            background: #0ff;
-            color: black;
-        }
-        input, select {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid #0ff;
-        }
-        .product-card {
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-            margin: 10px 0;
-            padding: 15px;
-        }
-        .product-card img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrar Productos - Sneakers 2049</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/stylesheet.css" />
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
+  </style>
 </head>
-<body>
+<body class="min-h-screen text-white font-[Orbitron]">
+    <nav class="bg-black/80 text-white shadow-lg shadow-cyan-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+          <div class="text-2xl font-bold text-cyan-300 drop-shadow-[0_0_10px_cyan]">
+            Sneakers 2049
+          </div>
+          <div>
+            <a href="index.html" class="text-white hover:text-cyan-300 transition-colors duration-200 font-semibold">
+              Inicio
+            </a>
+          </div>
+        </div>
+      </nav>
+  <div class="max-w-4xl mx-auto mt-10 bg-[#141432e6] p-6 rounded-2xl shadow-lg shadow-cyan-300">
+    <h2 class="text-left text-3xl text-cyan-300 mb-6 drop-shadow-[0_0_10px_cyan]">Administrar Productos</h2>
 
-    <div class="container mt-4">
-        <h2 class="text-start">Administrar Productos</h2>
+    <!-- Menú de opciones -->
+    <div class="mb-6">
+      <label for="menuOpciones" class="block mb-2 font-semibold">Seleccione una acción:</label>
+      <select id="menuOpciones" class="w-full px-4 py-2 bg-white/10 text-white border border-cyan-300 rounded-md">
+        <option value="">-- Seleccione --</option>
+        <option value="agregar">Agregar Producto</option>
+        <option value="actualizar">Actualizar Producto</option>
+        <option value="eliminar">Eliminar Producto</option>
+        <option value="ver">Ver Productos</option>
+      </select>
+    </div>
 
-        <!-- Menú de opciones -->
+    <!-- Sección para Agregar Producto -->
+    <div id="seccionAgregar" class="hidden">
+      <h3 class="text-2xl text-cyan-300 mb-4 drop-shadow-[0_0_10px_cyan]">Agregar Producto</h3>
+      <form id="productForm">
         <div class="mb-4">
-            <label for="menuOpciones" class="form-label">Seleccione una acción:</label>
-            <select id="menuOpciones" class="form-select">
-                <option value="">-- Seleccione --</option>
-                <option value="agregar">Agregar Producto</option>
-                <option value="actualizar">Actualizar Producto</option>
-                <option value="eliminar">Eliminar Producto</option>
-                <option value="ver">Ver Productos</option>
-            </select>
+          <label for="productName" class="block mb-2 font-semibold">Nombre del Producto</label>
+          <input type="text" id="productName" required
+            class="w-full px-4 py-2 bg-white/10 text-white border border-cyan-300 rounded-md" />
         </div>
-
-        <!-- Sección para Agregar Producto -->
-        <div id="seccionAgregar" style="display: none;">
-            <h3>Agregar Producto</h3>
-            <form id="productForm">
-                <div class="mb-3">
-                    <label for="productName" class="form-label">Nombre del Producto</label>
-                    <input type="text" id="productName" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="productSizes" class="form-label">Tallas Disponibles</label>
-                    <input type="text" id="productSizes" class="form-control" placeholder="Ejemplo: 38, 39, 40">
-                </div>
-                <div class="mb-3">
-                    <label for="productPrice" class="form-label">Precio</label>
-                    <input type="number" id="productPrice" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="productImage" class="form-label">Imagen</label>
-                    <input type="file" id="productImage" class="form-control" accept="image/*">
-                    <img id="imagePreview" class="mt-2" style="max-width: 200px; display: none;">
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Agregar Producto</button>
-            </form>
+        <div class="mb-4">
+          <label for="productSizes" class="block mb-2 font-semibold">Tallas Disponibles</label>
+          <input type="text" id="productSizes" placeholder="Ejemplo: 38, 39, 40"
+            class="w-full px-4 py-2 bg-white/10 text-white border border-cyan-300 rounded-md" />
         </div>
-
-        <!-- Sección para Actualizar Producto -->
-        <div id="seccionActualizar" style="display: none;">
-            <h3>Actualizar Producto</h3>
-            <p>Aquí podrás actualizar un producto (Funcionalidad en desarrollo).</p>
+        <div class="mb-4">
+          <label for="productPrice" class="block mb-2 font-semibold">Precio</label>
+          <input type="number" id="productPrice" required
+            class="w-full px-4 py-2 bg-white/10 text-white border border-cyan-300 rounded-md" />
         </div>
-
-        <!-- Sección para Eliminar Producto -->
-        <div id="seccionEliminar" style="display: none;">
-            <h3>Eliminar Producto</h3>
-            <p>Aquí podrás eliminar un producto (Funcionalidad en desarrollo).</p>
+        <div class="mb-4">
+          <label for="productImage" class="block mb-2 font-semibold">Imagen</label>
+          <input type="file" id="productImage" accept="image/*"
+            class="w-full px-4 py-2 bg-white/10 text-white border border-cyan-300 rounded-md" />
+          <img id="imagePreview" class="mt-4 max-w-xs hidden rounded-md" />
         </div>
+        <button type="submit"
+          class="w-full py-2 px-4 bg-fuchsia-500 hover:bg-fuchsia-700 text-white font-bold rounded shadow-md shadow-fuchsia-500">
+          Agregar Producto
+        </button>
+      </form>
     </div>
 
-    <!-- Sección para Ver Productos -->
-    <div id="seccionVer" class="container mt-5" style="display: none;">
-        <h3>Lista de Productos</h3>
-
-        <!-- Contenedor de tarjetas de productos -->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Producto 1">
-                    <h5 class="mt-2">Producto 1</h5>
-                    <p>Tallas: 38, 39, 40</p>
-                    <p>Precio: $100</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Producto 2">
-                    <h5 class="mt-2">Producto 2</h5>
-                    <p>Tallas: 41, 42, 43</p>
-                    <p>Precio: $120</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Producto 3">
-                    <h5 class="mt-2">Producto 3</h5>
-                    <p>Tallas: 44, 45, 46</p>
-                    <p>Precio: $150</p>
-                </div>
-            </div>
-        </div>
+    <!-- Sección para Actualizar Producto -->
+    <div id="seccionActualizar" class="hidden mt-6">
+      <h3 class="text-2xl text-cyan-300 mb-2 drop-shadow-[0_0_10px_cyan]">Actualizar Producto</h3>
+      <p>Aquí podrás actualizar un producto (Funcionalidad en desarrollo).</p>
     </div>
 
-    <script>
-        document.getElementById('productImage').addEventListener('change', function(event) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                const img = document.getElementById('imagePreview');
-                img.src = reader.result;
-                img.style.display = 'block';
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        });
+    <!-- Sección para Eliminar Producto -->
+    <div id="seccionEliminar" class="hidden mt-6">
+      <h3 class="text-2xl text-cyan-300 mb-2 drop-shadow-[0_0_10px_cyan]">Eliminar Producto</h3>
+      <p>Aquí podrás eliminar un producto (Funcionalidad en desarrollo).</p>
+    </div>
+  </div>
 
-        // Control del menú de opciones
-        document.getElementById('menuOpciones').addEventListener('change', function() {
-            let opcion = this.value;
+  <!-- Sección para Ver Productos -->
+  <div id="seccionVer" class="max-w-5xl mx-auto mt-10 hidden bg-[#141432e6] p-6 rounded-2xl shadow-lg shadow-cyan-300">
+    <h3 class="text-2xl text-cyan-300 mb-6 drop-shadow-[0_0_10px_cyan]">Lista de Productos</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-black/60 text-white rounded-lg shadow-md shadow-cyan-300 p-4">
+        <img src="https://via.placeholder.com/300x200" alt="Producto 1" class="rounded-lg w-full mb-2" />
+        <h5 class="text-lg font-semibold">Producto 1</h5>
+        <p>Tallas: 38, 39, 40</p>
+        <p>Precio: $100</p>
+      </div>
+      <div class="bg-black/60 text-white rounded-lg shadow-md shadow-cyan-300 p-4">
+        <img src="https://via.placeholder.com/300x200" alt="Producto 2" class="rounded-lg w-full mb-2" />
+        <h5 class="text-lg font-semibold">Producto 2</h5>
+        <p>Tallas: 41, 42, 43</p>
+        <p>Precio: $120</p>
+      </div>
+      <div class="bg-black/60 text-white rounded-lg shadow-md shadow-cyan-300 p-4">
+        <img src="https://via.placeholder.com/300x200" alt="Producto 3" class="rounded-lg w-full mb-2" />
+        <h5 class="text-lg font-semibold">Producto 3</h5>
+        <p>Tallas: 44, 45, 46</p>
+        <p>Precio: $150</p>
+      </div>
+    </div>
+  </div>
 
-            // Ocultar todas las secciones
-            document.getElementById('seccionAgregar').style.display = 'none';
-            document.getElementById('seccionActualizar').style.display = 'none';
-            document.getElementById('seccionEliminar').style.display = 'none';
-            document.getElementById('seccionVer').style.display = 'none';
+  <script>
+    document.getElementById('productImage').addEventListener('change', function (event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const img = document.getElementById('imagePreview');
+        img.src = reader.result;
+        img.classList.remove('hidden');
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    });
 
-            // Mostrar la sección correspondiente
-            if (opcion === "agregar") {
-                document.getElementById('seccionAgregar').style.display = 'block';
-            } else if (opcion === "actualizar") {
-                document.getElementById('seccionActualizar').style.display = 'block';
-            } else if (opcion === "eliminar") {
-                document.getElementById('seccionEliminar').style.display = 'block';
-            } else if (opcion === "ver") {
-                document.getElementById('seccionVer').style.display = 'block';
-            }
-        });
-    </script>
+    document.getElementById('menuOpciones').addEventListener('change', function () {
+      const secciones = ['seccionAgregar', 'seccionActualizar', 'seccionEliminar', 'seccionVer'];
+      secciones.forEach(id => document.getElementById(id).classList.add('hidden'));
+
+      const opcion = this.value;
+      if (opcion) {
+        document.getElementById('seccion' + opcion.charAt(0).toUpperCase() + opcion.slice(1)).classList.remove('hidden');
+      }
+    });
+  </script>
 
 </body>
 </html>
