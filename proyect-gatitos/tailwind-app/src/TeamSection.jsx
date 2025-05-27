@@ -1,6 +1,7 @@
 import imagen from './assets/IMG_4812.jpg';
 import imagenG from './assets/pngegg.png';
 import imagenV from './assets/img2.jpeg';
+import imagenA from './assets/img3.jpeg';
 
 function TeamSection(){
  return(
@@ -31,10 +32,10 @@ function TeamSection(){
       </li>
       <li>
         <div class="flex items-center gap-x-6">
-          <img class="size-16 rounded-full object-cover " src={imagenG} alt=""/>
+          <img class="size-16 rounded-full object-cover " src={imagenA} alt=""/>
           <div>
             <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Guerra Arahí</h3>
-            <p class="text-sm/6 font-semibold text-indigo-600">Rol</p>
+            <p class="text-sm/6 font-semibold text-indigo-600">ghghjs21@gmail.com</p>
           </div>
         </div>
       </li>
