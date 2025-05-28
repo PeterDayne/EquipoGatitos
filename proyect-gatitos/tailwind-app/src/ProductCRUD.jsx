@@ -108,7 +108,15 @@ function ProductCrud() {
       )}
 
       {(selectedOption === 'modificar' || selectedOption === 'eliminar') && productList.length > 0 && (
-        <div className="mt-6 space-y-4">
+        <div className="mt-1 space-y-4">
+           <div className="flex justify-end">
+    <button
+      onClick={handleCancel}
+      className="mb-1 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+    >
+      Cancelar
+    </button>
+  </div>
           <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
             Lista de productos
           </h2>
@@ -122,6 +130,7 @@ function ProductCrud() {
                   <button onClick={() => handleEdit(index)} className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">
                     Editar
                   </button>
+                  
                 )}
                 {selectedOption === 'eliminar' && (
                   <button onClick={() => handleDelete(index)} className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700">
@@ -129,10 +138,14 @@ function ProductCrud() {
                   </button>
                 )}
               </div>
+              
             </div>
+            
           ))}
         </div>
+        
       )}
+      
 
       {(selectedOption === 'modificar' || selectedOption === 'eliminar') && productList.length === 0 && (
         <p className="text-gray-600 mt-4">No hay productos disponibles.</p>
