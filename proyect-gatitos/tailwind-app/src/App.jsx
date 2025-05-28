@@ -14,6 +14,7 @@ import ProductPage from './ProductPage';
 import ProductCRUD from './ProductCRUD';
 import Checkout from './Checkout';
 import Login from './Login';
+import Registro from './Registro';
 
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/ProductGrid" element={<ProductGrid/>}/>
+        <Route path="/Registro" element={<Registro/>}/>
+
       </Routes>
     </BrowserRouter>
 
